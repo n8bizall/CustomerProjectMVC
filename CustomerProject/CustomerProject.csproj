@@ -150,6 +150,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -157,9 +158,19 @@
     <Compile Include="Migrations\201803061958224_initialization.Designer.cs">
       <DependentUpon>201803061958224_initialization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803071623406_Added order.cs" />
+    <Compile Include="Migrations\201803071623406_Added order.Designer.cs">
+      <DependentUpon>201803071623406_Added order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803071914237_adding field.cs" />
+    <Compile Include="Migrations\201803071914237_adding field.Designer.cs">
+      <DependentUpon>201803071914237_adding field.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerDbContext.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrdersForCustomer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +215,12 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Customers\OrdersForCustomer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -224,6 +241,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803061958224_initialization.resx">
       <DependentUpon>201803061958224_initialization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803071623406_Added order.resx">
+      <DependentUpon>201803071623406_Added order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803071914237_adding field.resx">
+      <DependentUpon>201803071914237_adding field.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

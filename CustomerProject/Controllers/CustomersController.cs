@@ -19,6 +19,25 @@ namespace CustomerProject.Controllers                              // came from 
         {                                                         // actionresult will return View(passing in data)
             return View(db.Customers.ToList());
         }
+        //GET: Customers/OrdersForCustomers/5
+        public ActionResult OrdersForCustomer(int? id)
+        {
+            if(id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            OrdersForCustomer ordersForCustomer = new OrdersForCustomer();
+            ordersForCustomer.Customer = db.Customers.Find(id);
+
+            if (ordersForCustomer.Customer == null)
+            {
+                return HttpNotFound();
+            }
+            ordersForCustomer.Orders = db.Orders.Where(o => o.CustomerId == id).ToList();   // go find all orders that have a cust id same as the orders list
+            return View(ordersForCustomer);
+        }
+    
+
 
         // GET: Customers/Details/5
         public ActionResult Details(int? id)
